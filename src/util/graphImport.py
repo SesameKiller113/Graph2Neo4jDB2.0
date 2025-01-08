@@ -13,7 +13,7 @@ def loadVariable(node_name):
         node_name (str): The name of the node to find the corresponding configuration.
     """
     # Define the cache folder path
-    cache_folder = os.path.abspath("../../cache")
+    cache_folder = os.path.abspath("../cache")
     node_folder = os.path.join(cache_folder, node_name)
 
     # Define the path to the configuration JSON file
@@ -69,9 +69,8 @@ def createSingleNode(df, node_config):
         # Create the node with all properties
         node = Node(label, **properties)
         nodes.append(node)
-
     # Return the unique identifier as the property key if multiple keys were used
-    return label, "unique_identifier" if len(property_key) > 1 else property_key[0], nodes
+    return label, "unique_identifier" if len(property_key) > 1 else node_config[property_key[0]], nodes
 
 
 def importGraph(graph, csv_files, node_config, progress_callback=None):
@@ -135,3 +134,4 @@ def startImport(DataFolder, node_name, progress_callback=None):
 
     file_paths = DataFolder.csv_files_list
     importGraph(g, file_paths, cached_data[0], progress_callback)
+

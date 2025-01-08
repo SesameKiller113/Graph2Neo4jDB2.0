@@ -15,6 +15,7 @@ from PyQt6.QtWidgets import QScrollArea
 class ColumnMapping(QWidget):
     def __init__(self, DataFolder, csv_columns, node_name):
         super().__init__()
+        self.start_button = None
         self.csv_columns = csv_columns
         self.node_name = node_name
         self.new_variable_names = {}
@@ -124,6 +125,11 @@ class ColumnMapping(QWidget):
         os.makedirs(node_folder, exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump(self.column_mappings, f, ensure_ascii=False, indent=4)
+        self.start_button = QPushButton("Start Import")
+        self.start_button.clicked.connect(self.start_processing)
+        self.main_layout.addWidget(self.start_button)
+
+    def start_processing(self):
         self.processing_page = FileProcessing(self.DataFolder, self.node_name)
         self.processing_page.show()
         self.close()
