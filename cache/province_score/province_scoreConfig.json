@@ -1,0 +1,14 @@
+{
+    "Node Name": "province_score",
+    "Property Key": [
+        "prov_score_id"
+    ],
+    "prov_score_id": "province_score_id",
+    "school_id": "university_id",
+    "school": "university_name",
+    "province_id": "province_id",
+    "province": "province_name",
+    "year": "admission_year",
+    "type": "admission_score_type",
+    "min_score": "province_minimum_score"
+}

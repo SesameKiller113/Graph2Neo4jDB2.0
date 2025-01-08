@@ -1,0 +1,25 @@
+{
+    "Node Name": "score",
+    "Property Key": [
+        "score_id"
+    ],
+    "score_id": "score_record_id",
+    "special_unique_id": "major_unique_id",
+    "school_id": "university_id",
+    "special_id": "major_id",
+    "province": "province_name",
+    "year": "admission_year",
+    "sp_name": "major_name",
+    "level1_name": "level1_subject",
+    "level2_name": "level2_subject",
+    "level3_name": "level3_subject",
+    "zslx_name": "admission_type",
+    "local_batch_name": "local_admission_batch",
+    "type": "admission_score_type",
+    "min": "minimum_score",
+    "max": "maximum_score",
+    "average": "average_score",
+    "min_section": "minimum_section",
+    "info": "additional_info",
+    "sg_info": "subject_selection_info"
+}

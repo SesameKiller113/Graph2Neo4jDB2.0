@@ -4,3 +4,4 @@ src/.streamlit/secrets.toml
 .DS_Store
 .vscode
 .idea/
+data
