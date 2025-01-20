@@ -5,6 +5,6 @@ src/.streamlit/secrets.toml
 .vscode
 .idea/
 data/*
-!data/ .gitkeep
+!data/.gitkeep
 cache/*
-!cache/ .gitkeep
+!cache/.gitkeep
