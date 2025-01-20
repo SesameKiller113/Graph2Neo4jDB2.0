@@ -4,7 +4,7 @@ src/.streamlit/secrets.toml
 .DS_Store
 .vscode
 .idea/
-data/*
-!data/.gitkeep
 cache/*
 !cache/.gitkeep
+data/*
+!data/.gitkeep
