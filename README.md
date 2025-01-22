@@ -15,9 +15,9 @@ All features are supported by a simple UI—so you don’t have to write code ev
 
 ---
 
-## 📥 **Import Your Own Node**
+## 📥 **1. Import Your Own Node**
 
-### 🛠 **Add a New Node**
+### 🛠 **(1) Add a New Node**
 
 Click **"Add New Node"** to select a CSV folder and define the node name.
 
@@ -37,7 +37,7 @@ The tool automatically extracts the **common column names** from all CSVs and di
 
 ---
 
-### 🎯 **Select Your Data Fields**
+### 🎯 **(2) Select Your Data Fields**
 
 Drag column labels into the **white box** to define node attributes.
 
@@ -52,7 +52,7 @@ A **`path.json`** file will store the required data paths, enabling **one-click 
 
 ---
 
-### 🔗 **Variables Mapping**
+### 🔗 **(3) Variables Mapping**
 
 This tool allows **renaming CSV columns** as needed.
 
@@ -68,7 +68,7 @@ This new variable is **stored in the node** but does not affect existing data.
 
 ---
 
-### 🚀 **Finalizing Your Import**
+### 🚀 **(4) Finalizing Your Import**
 
 Click **Submit**, and the tool will generate **`xxxConfig.json`** in `cache/YourNode/`.
 
@@ -78,7 +78,7 @@ Once a node structure is built, you can **reuse the config file** for **fast imp
 
 ---
 
-## 🕸 **Create Node Relationships**
+## 🕸 **2. Create Node Relationships**
 
 After successfully importing a node, you'll see a newly added, **adorable red node label** on the main page.
 You can select **Exactly Two** nodes to create a relationship between them.
@@ -89,3 +89,5 @@ Similarly, the tool automatically detects **matching variable names** in both no
 allowing you to **customize the relationship name** as needed.
 
 <img src="images/createRelationship.png" width="400">
+
+## 
