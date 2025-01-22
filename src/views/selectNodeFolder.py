@@ -6,7 +6,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QPushButton, QLabel, QLineEdit, QFileDialog, QMessageBox
 )
-from util.csvWalk import DataFolder
+from util.dataFolder import DataFolder
 from views.columnDefine import ColumnDefine
 
 
@@ -101,7 +101,7 @@ class SelectNodeFolder(QMainWindow):
         try:
             # Find all CSV files in the folder
             dataFolder = DataFolder(folder_path)
-            csv_files = dataFolder.find_all_csv_files()
+            csv_files = dataFolder.csv_files_list
 
             if not csv_files:
                 QMessageBox.critical(self, "Error", "No CSV files found in the selected folder!")

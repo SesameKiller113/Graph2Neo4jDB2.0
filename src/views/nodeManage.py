@@ -2,7 +2,7 @@ import json
 import os
 import sys
 import streamlit as st
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QEventLoop
 
 from PyQt6.QtWidgets import (
     QWidget, QApplication, QLabel, QVBoxLayout, QGridLayout, QCheckBox, QPushButton, QHBoxLayout, QMessageBox,
@@ -10,16 +10,20 @@ from PyQt6.QtWidgets import (
 )
 from py2neo import Graph
 
+from util.nodeInfoLoadFromCache import getNodeNameFromCache, createDataFolderClass
 from util.nodesFetch import nodesInNeo4j, nodeInfoFetch
+from views.processing import FileProcessing
 from views.selectNodeFolder import SelectNodeFolder
 
 
 class NodeManage(QWidget):
     def __init__(self):
         super().__init__()
+        self.processing_page = None
         self.terminate_button = None
         self.add_page = None
         self.start_button = None
+        self.one_click_button = None
         self.input_box = None
         self.checkboxes = None
         self.proceed_button = None
@@ -83,6 +87,20 @@ class NodeManage(QWidget):
             """)
         self.proceed_button.clicked.connect(self.proceed_to_relationship)
         self.layout.addWidget(self.proceed_button)
+
+        # Add a button which you can import the nodes with your own config.json and data with only one click
+        self.one_click_button = QPushButton("Skadoosh")
+        self.one_click_button.setStyleSheet("""
+                    font-size: 18px;
+                    padding: 10px;
+                    background-color: #D2042D;
+                    color: white;
+                    border: 2px solid #ccc;
+                    border-radius: 15px;
+                """)
+        self.one_click_button.setFixedSize(260, 100)
+        self.one_click_button.clicked.connect(self.auto_import)
+        self.layout.addWidget(self.one_click_button)
 
         # Create a horizontal layout for the buttons
         button_layout = QHBoxLayout()
@@ -293,3 +311,30 @@ class NodeManage(QWidget):
 
     def terminate_app(self):
         self.close()
+
+    def auto_import(self):
+        nodeNameList = getNodeNameFromCache()
+        print(nodeNameList)
+        dataFolderList = createDataFolderClass(nodeNameList)
+        print(dataFolderList)
+        if len(dataFolderList) != len(nodeNameList):
+            QMessageBox.warning(self, "Something went wrong", "The node number is not fit for the info you give")
+        elif len(dataFolderList) == 0 and len(nodeNameList) == 0:
+            QMessageBox.warning(self, "OPS!", "There is no node and node info you put in the cache folder")
+        else:
+            self.close()
+            n = len(nodeNameList)
+            for index, (dataFolder, nodeName) in enumerate(zip(dataFolderList, nodeNameList)):
+                if index < n - 1:
+                    processing_page = FileProcessing(dataFolder, nodeName, True)
+                    processing_page.show()
+                else:
+                    processing_page = FileProcessing(dataFolder, nodeName, False)
+                    processing_page.show()
+
+                loop = QEventLoop()
+                processing_page.destroyed.connect(loop.quit)
+                loop.exec()
+
+
+

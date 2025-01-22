@@ -5,7 +5,7 @@ import pandas as pd
 class DataFolder:
     def __init__(self, folderPath):
         self.folderPath = folderPath
-        self.csv_files_list = None
+        self.csv_files_list = self.find_all_csv_files()
 
     def find_all_csv_files(self):
         csvFiles = []
@@ -13,8 +13,7 @@ class DataFolder:
         for root, _, files in os.walk(self.folderPath):
             for file in files:
                 if file.endswith(".csv"):
-                    csvFiles.append(os.path.join(root, file))
-        self.csv_files_list = csvFiles
+                    csvFiles.append(str(os.path.join(root, file)))
         return csvFiles
 
     def get_all_col_names(self):

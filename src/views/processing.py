@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtCore import Qt, QThread, pyqtSignal, QTimer
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout, QWidget, QProgressBar, QLabel, QPushButton
 )
@@ -20,10 +20,12 @@ class FileProcessingThread(QThread):
 
 
 class FileProcessing(QMainWindow):
-    def __init__(self, DataFolder, node_name):
+    def __init__(self, DataFolder, node_name, auto_close=False):
         super().__init__()
         self.node_manage_page = None
-        self.setWindowTitle("File Processing Progress")
+        self.auto_close = auto_close
+        self.node_name = node_name
+        self.setWindowTitle(f"{node_name} Node Processing Progress")
         self.setGeometry(300, 300, 400, 200)
 
         # Central widget
@@ -35,7 +37,7 @@ class FileProcessing(QMainWindow):
         central_widget.setLayout(self.layout)
 
         # Label
-        self.label = QLabel("Processing files...")
+        self.label = QLabel(f"Processing Node {node_name}")
         self.label.setStyleSheet("font-size: 30px; color: orange")
         self.layout.addWidget(self.label)
 
@@ -81,11 +83,17 @@ class FileProcessing(QMainWindow):
 
     def onProcessingFinished(self):
         """Handle the event when processing is finished."""
-        self.label.setText("All files processed!")
+        if self.auto_close:
+            QTimer.singleShot(1000, self.deleteLater)
+            return
+
+        self.label.setText(f"All {self.node_name} Nodes processed!")
         self.layout.addWidget(self.finished_button)
 
     def backToNodeManage(self):
+        """Return to NodeManage screen."""
         from views.nodeManage import NodeManage
         self.node_manage_page = NodeManage()
         self.node_manage_page.show()
         self.close()
+
