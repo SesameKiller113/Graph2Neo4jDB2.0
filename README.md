@@ -89,3 +89,51 @@ Similarly, the tool automatically detects **matching variable names** in both no
 allowing you to **customize the relationship name** as needed.
 
 <img src="images/createRelationship.png" width="400">
+ 
+## ⚡ **Ⅲ. One-Click (Skadoosh) Bulk Import** 
+
+### **① Seamless Reimport for the Same Node Type** 
+
+If you have **successfully imported nodes via the UI**, their information is already stored in the `cache` folder.  
+You can simply click the **"Skadoosh"** button on the main page next time, and the tool will:  
+
+1️⃣ **Scan all folders** inside `cache`.  
+2️⃣ **Read `xxxConfig.json` and `path.json`** from each folder.  
+3️⃣ **Automatically create nodes** based on the folder names and their configurations.  
+
+This way, you no longer need to go through the UI every time you import the same type of nodes.
+
+### **② Write your own config json file**
+
+To manually define your own **node configuration**, you need to create two essential JSON files inside the `cache` directory:  
+
+#### **1️⃣ Create `xxxConfig.json`**  
+
+This file specifies **node properties** and the **property key** for uniqueness.  
+Below is an example configuration for an **Airport** node:  
+
+```json
+{
+    "Node Name": "Airport",
+    "Property Key": [
+        "Airport",
+        "You can add any variables below, as they will be merged together"
+    ],
+    "Airport": "Airport_new",
+    "City": "City_new",
+    "Passengers (Million)": "Passengers (Million)_new",
+    "Code": "Code_new",
+    "Runways": "Runways_new"
+}
+```
+
+#### **️2️⃣ Create `path.json`**
+
+This file Stores the **folder path** where the CSV data is located. 
+Below is an example for an **Airport** node:
+
+```json
+{
+    "folder_path": "yourAddress/Airport"
+}
+```
