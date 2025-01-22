@@ -15,6 +15,22 @@ All features are supported by a simple UI—so you don’t have to write code ev
 
 ---
 
+## Setup before running
+
+1. Add the Neo4j credentials to `.streamlit/secrets.toml` (place them inside the `src` directory).
+
+2. Create a new Neo4jGraph instance using these credentials
+
+3. Set your own graph info in the `serects.toml`
+
+```toml
+NEO4J_URI = "bolt://54.234.52.23:7687"
+NEO4J_USERNAME = "neo4j"
+NEO4J_PASSWORD = "your_password"
+```
+
+---
+
 ## 📥 **Ⅰ. Import Your Own Node**
 
 ### 🛠 **① Add a New Node**
@@ -90,6 +106,8 @@ allowing you to **customize the relationship name** as needed.
 
 <img src="images/createRelationship.png" width="400">
  
+---
+
 ## ⚡ **Ⅲ. One-Click (Skadoosh) Bulk Import** 
 
 ### **① Seamless Reimport for the Same Node Type** 
