@@ -10,6 +10,24 @@ All the features below are supported by a simple UI, so you don't have to write 
 2. Node Relationship Mapping: Establish and customize relationships between nodes.
 3. One-Click (Skadoosh) Bulk Import: Import a large set of nodes with configurations and data in a single action.
 4. Under Construction... 🚧 (More powerful features coming soon!)### Import your own nodes from csv file
+
 ### Import your own nodes from csv file
 
-![Demo Image](images/test1.png)
+<img src="images/startAddNode.png" width="500">
+
+**Click the add new node button and you can select your csv data folder and define the node name.**
+
+**The default folder is 'data' inside the project directory.**
+
+<img src="images/selectCsvFolder.png" width="500">
+
+**<span style="color:orange">PS: The folder you select must contain CSV files representing the same type of node. 
+For example, if you are importing the 'City' node, your folder might include files like NewYork.csv, Chicago.csv,
+etc. The tool will automatically extract the intersection of all column names across the CSV files in the selected folder
+and use them as the displayed fields in the UI.</span>**
+
+<img src="images/columnSelect.png" width="500">
+
+**Alright! Now you can drag the column labels you want into the white box on the right. These will be the data fields 
+used to construct your nodes. Once you're done, click 'Next' to proceed.**
+
