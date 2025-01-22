@@ -28,7 +28,7 @@ Click **"Add New Node"** to select a CSV folder and define the node name.
 
 ### ⚠️ **Important**  
 
-<span style="color:orange">The selected folder must contain CSV files of the **same node type**.  
+$\color{#FF0000}{The selected folder must contain CSV files of the **same node type**.}$  
 For example, importing **City** nodes means your folder should contain:  
 🗽 `NewYork.csv`, 🌆 `Chicago.csv`, etc.  
 
