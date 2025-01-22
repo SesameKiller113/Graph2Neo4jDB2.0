@@ -13,21 +13,34 @@ All the features below are supported by a simple UI, so you don't have to write 
 
 ### Import your own nodes from csv file
 
+### 🛠 **Add a New Node**  
+
+Click the **"Add New Node"** button to select your CSV data folder and define the node name.  
+
 <img src="images/startAddNode.png" width="500">
 
-**Click the add new node button and you can select your csv data folder and define the node name.**
-
-**The default folder is 'data' inside the project directory.**
+📂 **Default Folder:** `'data'` inside the project directory.  
 
 <img src="images/selectCsvFolder.png" width="500">
 
-**<span style="color:orange">PS: The folder you select must contain CSV files representing the same type of node. 
-For example, if you are importing the 'City' node, your folder might include files like NewYork.csv, Chicago.csv,
-etc. The tool will automatically extract the intersection of all column names across the CSV files in the selected folder
-and use them as the displayed fields in the UI.</span>**
+---
+
+### ⚠️ **Important:**  
+
+<span style="color:orange">The selected folder must contain CSV files representing the same type of node.  
+For example, if you're importing a **City** node, your folder might include:  
+🗽 `NewYork.csv`, 🌆 `Chicago.csv`, etc.  
+
+The tool will **automatically extract** the intersection of all column names across the selected CSV files  
+and use them as the displayed fields in the UI.</span>
+---
+### 🎯 **Select Your Data Fields**  
+
+✅ Now, simply **drag** the column labels you want into the **white box** on the right.  
+These will be the data fields used to construct your nodes.  
+
+➡️ Once you're done, **click "Next Step"** to proceed!  
+
+🔄 **Made a mistake?** No worries—just **drag it out** to remove it.  
 
 <img src="images/columnSelect.png" width="500">
-
-**Alright! Now you can drag the column labels you want into the white box on the right. These will be the data fields 
-used to construct your nodes. Once you're done, click 'Next' to proceed.**
-
