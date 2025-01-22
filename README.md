@@ -29,13 +29,15 @@ Click **"Add New Node"** to select a CSV folder and define the node name.
 
 ### ⚠️ **Important**
 
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
-The selected folder must contain CSV files of the **same node type**.
-For example, importing **City** nodes means your folder should contain:
-🗽 `NewYork.csv`, 🌆 `Chicago.csv`, etc.
 
-The tool automatically extracts the **common column names** from all CSVs and displays them in the UI.</span>
+$${\color{orange}The \space selected \space folder \space must \space contain \space CSV \space files \space of \space the \space \textbf{same \space node \space type}.}$$
+
+$${\color{orange}For \space example, \space importing \space \textbf{City} \space nodes \space means \space your \space folder \space should \space contain:}$$
+
+$${\color{orange}🗽 \space NewYork.csv, \space 🌆 \space Chicago.csv, \space etc.}$$
+
+$${\color{orange}The \space tool \space automatically \space extracts \space the \space \textbf{common \space column \space names} \space from \space all \space CSVs \space and \space displays \space them \space in \space the \space UI.}$$
 
 ---
 
