@@ -29,9 +29,11 @@ Click **"Add New Node"** to select a CSV folder and define the node name.
 
 ### ⚠️ **Important**
 
+The selected folder must contain CSV files of the **same node type**.
+For example, importing **City** nodes means your folder should contain:
+🗽 `NewYork.csv`, 🌆 `Chicago.csv`, etc.
 
-
-$\textcolor{orange}{The\ selected\ folder\ must\ contain\ CSV\ files\ of\ the\ \textbf{same\ node\ type}.\ For\ example,\ importing\ \textbf{City}\ nodes\ means\ your\ folder\ should\ contain:\ 🗽\ NewYork.csv,\ 🌆\ Chicago.csv,\ etc.\ The\ tool\ automatically\ extracts\ the\ \textbf{common\ column\ names}\ from\ all\ CSVs\ and\ displays\ them\ in\ the\ UI.}$
+The tool automatically extracts the **common column names** from all CSVs and displays them in the UI.</span>
 
 ---
 
