@@ -28,7 +28,8 @@ Click **"Add New Node"** to select a CSV folder and define the node name.
 <img src="images/selectCsvFolder.png" width="400">
 
 ### ⚠️ **Important**
-$\color{orange}\text{The selected folder must contain CSV files of the \textbf{same node type}.}$
+
+$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
 The selected folder must contain CSV files of the **same node type**.
 For example, importing **City** nodes means your folder should contain:
