@@ -12,7 +12,8 @@ All features are supported by a simple UI—so you don’t have to write code ev
 2. **Build Node Relationship** – Define and customize relationships between nodes.
 3. **One-Click (Skadoosh) Bulk Import** – Import large datasets with just one action.
 4. **Under Construction...** 🚧 (More features coming soon!)
-
+   
+    (1) Updated the UI to connect to neo4j graph on March 2, 2025
 ---
 
 ## Setup before running
@@ -28,6 +29,20 @@ NEO4J_URI = "bolt://54.234.52.23:7687"
 NEO4J_USERNAME = "neo4j"
 NEO4J_PASSWORD = "your_password"
 ```
+
+---
+## 🎉 Brand New Graph Connection UI! 
+### Now you can set your neo4j graph config when you run the tool.
+
+We've supercharged your configuration experience! Now you can:
+
+🖱️ **Visually configure connections** through an intuitive interface.
+
+🔐 **Securely store credentials** with one-click save functionality
+
+✅ **Real-time validation** with instant connection testing.  
+
+No more manual file editing - your Neo4j journey just got smoother!  
 
 ---
 

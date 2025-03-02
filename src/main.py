@@ -1,11 +1,11 @@
 import sys
 from PyQt6.QtWidgets import QApplication
 
-from views.nodeManage import NodeManage
+from views.graphInitialization import GraphInitialization
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    main_window = NodeManage()
+    main_window = GraphInitialization()
     main_window.show()
     sys.exit(app.exec())
