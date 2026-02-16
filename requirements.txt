@@ -23,7 +23,7 @@ numpy==2.2.1
 packaging==24.2
 pandas==2.2.3
 pansi==2024.11.0
-pillow==11.0.0
+pillow==12.1.1
 protobuf==5.29.5
 py2neo==2021.2.4
 pyarrow==18.1.0
