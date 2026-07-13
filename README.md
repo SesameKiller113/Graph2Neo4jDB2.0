@@ -11,10 +11,26 @@ All features are supported by a simple UI—so you don’t have to write code ev
 1. **Batch Import for Similar CSVs** – Import multiple CSV files for the same node type.
 2. **Build Node Relationship** – Define and customize relationships between nodes.
 3. **One-Click (Skadoosh) Bulk Import** – Import large datasets with just one action.
-4. **Under Construction...** 🚧 (More features coming soon!)
+4. **Pre-Import CSV Readiness Check** – Profile schemas, row counts, missing columns, empty values, and duplicate merge keys before pushing data into Neo4j.
+5. **Under Construction...** 🚧 (More features coming soon!)
    
     (1) Updated the UI to connect to neo4j graph on March 2, 2025
 ---
+
+## Quick Start
+
+```bash
+pip install -r requirements.txt
+python src/main.py
+```
+
+For safer imports, run the CSV profiler before mapping a folder into Neo4j:
+
+```bash
+python -m src.util.csv_profile data/Airport --key Code --strict
+```
+
+The profiler returns a JSON readiness report with file counts, total rows, shared columns, schema drift, empty-cell counts, and duplicate merge keys. This helps catch data-quality issues before a batch import creates incorrect nodes or relationships.
 
 ## Setup before running
 
